@@ -2,9 +2,12 @@ function agregarAlCarrito(producto) {
     let memoria = JSON.parse(localStorage.getItem("productos"))
     let cantidadProductoFinal;
     console.log(memoria)
+
+    let cuenta = 0;
     if(!memoria){
         const nuevoProducto = getNuevoProductoParaMemoria(producto);
         localStorage.setItem("productos",JSON.stringify([nuevoProducto]))
+        cuenta = 1
     } else {
         const indicePorducto = memoria.findIndex(item => item.id === producto.id)
         console.log(indicePorducto)
@@ -13,16 +16,32 @@ function agregarAlCarrito(producto) {
             const nuevoProducto = getNuevoProductoParaMemoria(producto)
             nuevaMemoria.push(nuevoProducto)
             cantidadProductoFinal = 1
+            cuenta = 1
         } else {
             nuevaMemoria[indicePorducto].cantidad++;
             cantidadProductoFinal = nuevaMemoria[indicePorducto].cantidad;
+            cuenta = nuevaMemoria[indicePorducto].cantidad
         }
 
         localStorage.setItem("productos",JSON.stringify(nuevaMemoria))
-        actualizarCantidadCarrito()
+        return cuenta;
     }
-
+    actualizarCantidadCarrito()
 }
+
+function restarAlCarrito(producto) {
+    const memoria = JSON.parse(localStorage.getItem("productos"))
+    const indiceProducto = memoria.findIndex(item => item.id === producto.id)
+    if(memoria[indiceProducto].cantidad === 1){
+        memoria.splice(indiceProducto, 1)
+        localStorage.setItem("productos", JSON.stringify(memoria))
+    } else {
+        memoria[indiceProducto].cantidad--;
+    }
+    localStorage.setItem("productos", JSON.stringify(memoria))
+}
+
+
 
 function getNuevoProductoParaMemoria(producto) {
     const nuevoProducto = producto;
