@@ -76,7 +76,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -4185,7 +4185,8 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
-  box-shadow:  2px 6px 8px rgba(0, 0, 0,0.3);
+  box-shadow:  2px 6px 8px rgba(0, 0, 0, 0.3);
+  transition: 200ms;
 }
 .card > hr {
   margin-right: 0;
@@ -4624,6 +4625,7 @@ textarea.form-control-lg {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: var(--bs-badge-border-radius);
+  transition: 100ms;
 }
 .badge:empty {
   display: none;

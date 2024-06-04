@@ -12,7 +12,7 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet"/>
 </head>
 
 <body class="bg-white">
@@ -20,19 +20,15 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="pagina.html">Tienda</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                </ul>
-                <a href="carrito.html" class="btn btn-outline-dark">
-                    <i class="bi-cart-fill me-1"></i>
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">1</span>
-                </a>
-            </div>
+            <a href="carrito.html" id="verCarrito" class="btn btn-outline-dark">
+                <i class="bi-cart-fill me-1"></i>
+                <span class="badge bg-dark text-white ms-1 rounded-pill" id="cantidadCarrito">0</span>
+            </a>
         </div>
     </nav>
+    <!--Modal Container-->
+    <div id="modalContainer" class="modal-container"></div>
+
     <!-- Header-->
     <header class="bg-indigo py-5">
         <div class="container py-5 px-4 px-lg-5 my-5 d-flex h-100 align-items-center justify-content-center">
@@ -43,206 +39,25 @@
                     <a class="btn p-4 text-white-50 comenzar" href="#productsSection">Comenzar</a>
                 </div>
             </div>
-            
+
         </div>
     </header>
+
     <!-- Section-->
-    <section class="py-5" id="productsSection">
+    <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="img/auricular.webp" alt="auricular" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Auricular</h5>
-                                <!-- Product price-->
-                                $40.00 - $80.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="img/cafe.webp" alt="cafe" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Cafe</h5>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <img class="card-img-top" src="img/camara.webp" alt="camara" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Camara Digital</h5>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="img/cosmetico.webp" alt="cosmetico" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Cosmetico</h5>
-                                <!-- Product price-->
-                                $40.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <img class="card-img-top" src="img/cuchillo.webp" alt="cuchillo" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Cuchillo</h5>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="img/moto.webp" alt="motocicleta" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Motocicleta</h5>
-                                <!-- Product price-->
-                                $120.00 - $280.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <img class="card-img-top" src="img/telefono.webp" alt="telefono" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Celular</h5>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
-                        </div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="img/banana.webp" alt="banana" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Banana</h5>
-                                <!-- Product price-->
-                                $40.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="productsSection"></div>
         </div>
     </section>
+
+
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/verProductos.js"></script>
+    <script src="js/carritoService.js"></script>
 </body>
 
 </html>
