@@ -24,9 +24,10 @@ function agregarAlCarrito(producto) {
         }
 
         localStorage.setItem("productos",JSON.stringify(nuevaMemoria))
+        actualizarCantidadCarrito()
         return cuenta;
     }
-    actualizarCantidadCarrito()
+    
 }
 
 function restarAlCarrito(producto) {
@@ -38,7 +39,9 @@ function restarAlCarrito(producto) {
     } else {
         memoria[indiceProducto].cantidad--;
     }
+    
     localStorage.setItem("productos", JSON.stringify(memoria))
+    actualizarCantidadCarrito()
 }
 
 
