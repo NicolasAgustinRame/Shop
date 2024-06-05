@@ -7,6 +7,7 @@ function agregarAlCarrito(producto) {
     if(!memoria){
         const nuevoProducto = getNuevoProductoParaMemoria(producto);
         localStorage.setItem("productos",JSON.stringify([nuevoProducto]))
+        actualizarCantidadCarrito()
         cuenta = 1
     } else {
         const indicePorducto = memoria.findIndex(item => item.id === producto.id)

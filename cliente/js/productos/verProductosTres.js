@@ -35,4 +35,4 @@ function crearCardsProductos(productos) {
     });
 }
 
-crearCardsProductos(productos.slice(0,3))
+crearCardsProductos(productos.slice(0,4))
