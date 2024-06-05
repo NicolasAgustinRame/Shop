@@ -8,7 +8,7 @@ function crearCardsProductos(productos) {
             <div class="card h-100">
                 <!-- Sale badge-->
                 <div class="badge badge-shadow bg-white text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">
-                    <a class="btn" href="item.html"><i class="bi bi-eye-fill"></i></a>
+                    <a class="btn" href="item.html?name=${encodeURIComponent(producto.name)}&img=${encodeURIComponent(producto.img)}&price=${producto.price.toFixed(2)}"><i class="bi bi-eye-fill"></i></a>
                 </div>
                 <!-- Product image-->
                 <img class="card-img-top" src="${producto.img}" alt="${producto.name}" />
@@ -31,7 +31,8 @@ function crearCardsProductos(productos) {
         `
         
         contenedorProductos.appendChild(nuevoProducto)
-        nuevoProducto.getElementsByClassName("button")[0].addEventListener("click", ()=> agregarAlCarrito(producto))
+        nuevoProducto.getElementsByClassName("button")[0].addEventListener("click", 
+        ()=> agregarAlCarrito(producto))
     });
 }
 

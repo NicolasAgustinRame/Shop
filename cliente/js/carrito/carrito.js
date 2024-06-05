@@ -2,9 +2,6 @@ const contenidoTabla = document.getElementById('tbody')
 const unidadesElement = document.getElementById('unidades')
 const precioElement = document.getElementById('precio')
 
-
-
-
 function informacionTablaCarrito() {
     contenidoTabla.innerHTML = ""
 
