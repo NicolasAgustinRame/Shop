@@ -1,5 +1,11 @@
 const contenedorProductos = document.getElementById('productosSeccion')
 
+function obtenerProductosAleatorios(productos, cantidad) {
+    let productosClonados = [...productos];
+    productosClonados.sort(() => Math.random() - 0.5);
+    return productosClonados.slice(0, cantidad);
+}
+
 function crearCardsProductos(productos) {
     productos.forEach(producto => {
         const nuevoProducto = document.createElement("div")
@@ -35,5 +41,5 @@ function crearCardsProductos(productos) {
         ()=> agregarAlCarrito(producto))
     });
 }
-
-crearCardsProductos(productos.slice(0,4))
+const productosAleatorios = obtenerProductosAleatorios(productos, 4);
+crearCardsProductos(productosAleatorios);

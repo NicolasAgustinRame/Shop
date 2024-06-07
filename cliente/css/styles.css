@@ -76,7 +76,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  
+  scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: no-preference) {
